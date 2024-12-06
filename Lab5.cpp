@@ -119,9 +119,9 @@ int main() {
     const int MAX_USERS = 2;
     const int MAX_LOANS = 3;
 
-    Book books[MAX_BOOKS];  // Статический массив книг
-    User* users[MAX_USERS]; // Статический массив пользователей, указатели на User
-    Loan loans[MAX_LOANS];  // Массив записей о выдаче книг
+    Book books[MAX_BOOKS];
+    User* users[MAX_USERS]; 
+    Loan loans[MAX_LOANS];  
 
     
     books[0].setDetails("Евгений Онегин", "А.С. Пушкин", "978-5-392-41084-2");
@@ -129,8 +129,8 @@ int main() {
     books[2].setDetails("Гроза", "А.Н. Островский", "978-5-04-119071-2");
 
     // Инициализация пользователей
-    users[0] = new Member("Борис", 1);  // Создаем нового члена библиотеки
-    users[1] = new Librarian("Евгений", 2);  // Создаем библиотекаря
+    users[0] = new Member("Борис", 1); 
+    users[1] = new Librarian("Евгений", 2);  
 
     // Создаем записи о выдаче книг
     loans[0] = Loan(&books[0], users[0]);  
@@ -140,19 +140,19 @@ int main() {
     // Выводим книги
     cout << "Книги в библиотеке:" << endl;
     for (int i = 0; i < MAX_BOOKS; i++) {
-        books[i].display();  // Отображаем каждую книгу
+        books[i].display();  
     }
 
     // Выводим информацию о пользователях
     cout << "\nПользователи в системе:" << endl;
     for (int i = 0; i < MAX_USERS; i++) {
-        users[i]->display();  // Отображаем каждого пользователя
+        users[i]->display();  
     }
 
     // Пользователи выполняют свои действия
     cout << "\nДействия пользователей:" << endl;
     for (int i = 0; i < MAX_USERS; i++) {
-        users[i]->performAction(); // Виртуальные действия пользователей
+        users[i]->performAction(); 
     }
 
   // Выводим информацию о выдачах книг
